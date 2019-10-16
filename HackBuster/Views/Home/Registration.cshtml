@@ -1,0 +1,47 @@
+﻿
+@model HackBuster.Models.User
+
+<style>
+    form label {
+   
+        display: inline-flex;
+        width: 150px;
+        font-weight: bold;
+    }
+</style>
+
+<h2>Please Fill The Form To Register</h2>
+<br />
+
+<form method="post" action="Result">
+    <label for="UserName">User Name: </label> <input type="text" name="UserName" required /> <p></p>
+    <label for="Password">Password: </label> <input type="password" name="Password" required /> <p></p>
+    <label for="Email">Email: </label> <input type="email" name="Email" required /> <p></p>
+    <label for="FirstName">First Name: </label> <input type="text" name="FirstName" required /> <p></p>
+    <label for="LastName">Last Name: </label> <input type="text" name="LastName" required /> <p></p>
+    <label for="SSN">Social Security No: </label> <input type="password" name="SSN" required /> <p></p>
+    <label for="FavMovie">Favorite Movie: </label> <input type="text" name="FavMovie" required /> <p></p>
+    <p></p>
+
+    Please select a membership type: <br />
+    <select name="MembershipType">
+        <option value="HackBasic">Hack Basic</option>
+         <option value="HackPremium">Hack Premium</option>
+
+    </select>
+    <p></p>
+
+    Would you like to donate to charity?: <br />
+    <input type="radio" name="Charity" /> $5.00 to HackBuster's choice (Charity Name will never ever be disclosed)'
+    <p></p>
+
+       
+    Would you like to opt in for promotional news thru via text? <br />
+    <input type="checkbox" name="PromotionalNews" required /> Yes I would like to opt in and have texts sent to my phone.
+    <p></p>
+
+    <input type="submit" />
+
+
+</form>
+
