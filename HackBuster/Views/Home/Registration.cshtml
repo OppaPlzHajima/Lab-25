@@ -3,7 +3,6 @@
 
 <style>
     form label {
-   
         display: inline-flex;
         width: 150px;
         font-weight: bold;
@@ -14,19 +13,26 @@
 <br />
 
 <form method="post" action="Result">
-    <label for="UserName">User Name: </label> <input type="text" name="UserName" required /> <p></p>
-    <label for="Password">Password: </label> <input type="password" name="Password" required /> <p></p>
-    <label for="Email">Email: </label> <input type="email" name="Email" required /> <p></p>
-    <label for="FirstName">First Name: </label> <input type="text" name="FirstName" required /> <p></p>
-    <label for="LastName">Last Name: </label> <input type="text" name="LastName" required /> <p></p>
-    <label for="SSN">Social Security No: </label> <input type="password" name="SSN" required /> <p></p>
-    <label for="FavMovie">Favorite Movie: </label> <input type="text" name="FavMovie" required /> <p></p>
+
+    <label for="Name"> Name: </label> <input type="text" name="Name" required /> <p></p>
+    <label for="Price">Price: </label> <input type="number" name="Price" required /> <p></p>
+    <label for="Quantity">Quantity: </label> <input type="number" name="Quantity" required /> <p></p>
+    <label for="Description">Description: </label> <input type="text" name="Description" required /> <p></p>
+
+
+    @*<label for="UseName">User Name: </label> <input type="text" name="UserName" required /> <p></p>
+        <label for="Password">Password: </label> <input type="password" name="Password" required /> <p></p>
+        <label for="Email">Email: </label> <input type="email" name="Email" required /> <p></p>
+        <label for="FirstName">First Name: </label> <input type="text" name="FirstName" required /> <p></p>
+        <label for="LastName">Last Name: </label> <input type="text" name="LastName" required /> <p></p>
+        <label for="SSN">Social Security No: </label> <input type="password" name="SSN" required /> <p></p>
+        <label for="FavMovie">Favorite Movie: </label> <input type="text" name="FavMovie" required /> <p></p>*@
     <p></p>
 
-    Please select a membership type: <br />
+    @*Please select a membership type: <br />
     <select name="MembershipType">
         <option value="HackBasic">Hack Basic</option>
-         <option value="HackPremium">Hack Premium</option>
+        <option value="HackPremium">Hack Premium</option>
 
     </select>
     <p></p>
@@ -35,13 +41,58 @@
     <input type="radio" name="Charity" /> $5.00 to HackBuster's choice (Charity Name will never ever be disclosed)'
     <p></p>
 
-       
+
     Would you like to opt in for promotional news thru via text? <br />
     <input type="checkbox" name="PromotionalNews" required /> Yes I would like to opt in and have texts sent to my phone.
-    <p></p>
+    <p></p>*@
 
     <input type="submit" />
 
 
 </form>
+
+@*<h2>HEre's your list of registered items!</h2>*@
+
+@*<h4>Your Cart of Items</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ItemList">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+
 

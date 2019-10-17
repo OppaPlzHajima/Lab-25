@@ -45,43 +45,42 @@ namespace HackBuster.Controllers
         {
             return View();
         }
+
+        [HttpPost]
         public IActionResult Result(User user)
         {
-            ViewBag.Name = user.FirstName;
-            ViewBag.FirstName = user.FirstName;
+            ViewBag.Name = user.Name;
+            ViewBag.Price = user.Price;
+            ViewBag.Quantity = user.Quantity;
+            ViewBag.Description = user.Description;
             return View();
         }
 
 
-        public IActionResult RegisterItem()
-        {
-            return View();
-        }
-        public IActionResult ItemResultView()
-        {
-            return View();
-        }
+
+
+
+
+
         //[HttpPost]
-        ////public IActionResult ItemResultView(UserItem userItem)
-        ////{
-        ////    if (ModelState.IsValid)
-        ////    {
+        //public IActionResult ReItem(Item userItem)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        ViewBag.Name = userItem.Name;
+        //        ViewBag.Price = userItem.Price;
+        //        ViewBag.Description = userItem.Description;
+        //        ViewBag.Quantity = userItem.Quantity;
+        //        return View();
 
-        ////        //ViewBag.Name = userItem.Name;
-        ////        //ViewBag.Price = userItem.Price;
-        ////        //ViewBag.Description = userItem.Description;
-        ////        //ViewBag.Quantity = userItem.Quantity;
-        ////        return View(userItem);
-
-        ////    }
-        ////    else
-        ////    {
-        ////        return View(userItem);
-
-        ////    }
+        //    }
+        //    else
+        //    {
+        //        return View(userItem);
+        //    }
 
 
 
-    
+
+        }
     }
-}
